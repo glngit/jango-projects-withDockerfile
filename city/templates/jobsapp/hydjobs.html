@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>jobs fake information</title>
+    <link rel="stylesheet" href="{%static 'css/jobs.css'%}">
+  </head>
+  <body class='hero'>
+<h1>HYDERABAD JOBS INFORMATION</h1>
+{% if jobs%}
+<table>
+  <thead>
+    <th>Date</th>
+    <th>Companey</th>
+    <th>Title</th>
+    <th>Eligibility</th>
+    <th>Adress</th>
+    <th>Email</th>
+    <th>Phonenumber</th>
+  </thead>
+  {% for job in jobs%}
+  <tr>
+    <td>{{job.date}}</td>
+    <td>{{job.companey}}</td>
+    <td>{{job.title}}</td>
+    <td>{{job.eligibility}}</td>
+    <td>{{job.address}}</td>
+    <td>{{job.email}}</td>
+    <td>{{job.phonenumber}}</td>
+  </tr>
+  {%endfor%}
+</table>
+{%else%}
+<p>No information found</p>
+{%endif%}
+  </body>
+</html>
